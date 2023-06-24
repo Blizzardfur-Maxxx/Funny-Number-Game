@@ -68,6 +68,7 @@ int main() {
             }
             else
             {
+                printf("your final  points are : %d\n", points);
                 putw(points, fptr);
                 fclose(fptr);
                 break;
