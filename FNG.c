@@ -59,7 +59,7 @@ int main() {
             points += 1;
             printf("YOU WIN AND GET A POINT :3\n");
             printf("your current points are : %d\n", points);
-            printf("Do you want to play again? Enter y for YES, or any other key to exit: ");
+            printf("Do you want to play again? Enter y for YES, or any other key to exit: \n");
             char play_again;
             scanf(" %c", &play_again);
             if (play_again == 'y' || play_again == 'Y')
@@ -68,6 +68,8 @@ int main() {
             }
             else
             {
+                putw(points, fptr);
+                fclose(fptr);
                 break;
             }
         }
