@@ -34,21 +34,22 @@ int main() {
     printf("Welcome to the funny number guess game! \n");
     while(1)
     {
-        printf("Guess a number here! : \n");
         if (number <= 5)
         {
-            printf("hint: number is 5 or bellow! \n");
+            printf("hint: number is 5 or below! \n");
+            printf("Guess a number here! : ");
+
         }
         else
         {
             printf("hint: number is 5 or above 5! \n");
+            printf("Guess a number here! : ");
         }
         scanf("%d", &guess);
         if (guess == number)
         {
             points += 1;
             printf("YOU WIN AND GET A POINT :3\n");
-            printf("Your current points: %d\n", points);
             printf("your current points are : %d\n", points);
             printf("Do you want to play again? Enter y for YES, or any other key to exit: ");
             char play_again;
