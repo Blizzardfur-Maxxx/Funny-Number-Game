@@ -50,7 +50,7 @@ int main() {
         printf(" / __| '_ \\ / _ \\/ _` | __/ _ \\ '__| |    | () () |\n");
         printf("| (__| | | |  __/ (_| | ||  __/ |  |_|     \\  ^  / \n");
         printf(" \\___|_| |_|\\___|\\__,_|\\__\\___|_|  (_)      |||||  \n");
-        printf("dam youm actually decided to cheat in this game of all games\n");
+        printf("dam you actually decided to cheat in this game of all games\n");
         printf("well just play it how you like i wont stop ya but its gona get 5x harder now\n");
         range = range * 5;
     }
