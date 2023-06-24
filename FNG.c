@@ -3,6 +3,7 @@
 #include <time.h>
 
 int number, guess, points;
+int range = 10;
 
 FILE *fptr;
 
@@ -24,11 +25,11 @@ void logo() {
     printf(" | | |_ |/ _` | '_ ` _ \\ / _ \\             |__ <   \n");
     printf(" | |__| | (_| | | | | | |  __/           _ ___) |  \n");
     printf("  \\_____|\\__,_|_| |_| |_|\\___|          (_)____/   \n");                                                   
-}                                                  
+} 
 
 void randnum() {
     srand(time(NULL));
-    number = rand() % 10 + 1;
+    number = rand() % range + 1;
 }
 
 int main() {
@@ -36,10 +37,28 @@ int main() {
     int points = getw(fptr);
     fclose(fptr);
     fptr = fopen("score", "w");
-    randnum();
+    points += 1;
     logo();
     printf("Welcome to the funny number guess game! \n");
     printf("your last score was: %d\n", points);
+    printf("and for playing heres a free point!\n");
+    if (points >= 5000)
+    {
+        printf("      _                _            _              \n");
+        printf("     | |              | |          | |      _____  \n");
+        printf("  ___| |__   ___  __ _| |_ ___ _ __| |     /     \\ \n");
+        printf(" / __| '_ \\ / _ \\/ _` | __/ _ \\ '__| |    | () () |\n");
+        printf("| (__| | | |  __/ (_| | ||  __/ |  |_|     \\  ^  / \n");
+        printf(" \\___|_| |_|\\___|\\__,_|\\__\\___|_|  (_)      |||||  \n");
+        printf("dam youm actually decided to cheat in this game of all games\n");
+        printf("well just play it how you like i wont stop ya but its gona get 5x harder now\n");
+        range = range * 5;
+    }
+    else
+    {
+        printf("no cheats detected\n");
+    }    
+    randnum();
     while(1)
     {
         if (number <= 5)
