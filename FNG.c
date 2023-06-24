@@ -3,6 +3,7 @@
 #include <time.h>
 
 int number, guess, points;
+
 void logo() {
     printf("  _______ _             __                         \n");
     printf(" |__   __| |           / _|                        \n");
