@@ -4,6 +4,9 @@
 
 int number, guess, points;
 
+FILE *fptr;
+
+
 void logo() {
     printf("  _______ _             __                         \n");
     printf(" |__   __| |           / _|                        \n");
@@ -29,9 +32,14 @@ void randnum() {
 }
 
 int main() {
+    fptr = fopen("score", "r");
+    int points = getw(fptr);
+    fclose(fptr);
+    fptr = fopen("score", "w");
     randnum();
     logo();
     printf("Welcome to the funny number guess game! \n");
+    printf("your last score was: %d\n", points);
     while(1)
     {
         if (number <= 5)
@@ -77,6 +85,8 @@ int main() {
             else
             {
                 printf("your final  points are : %d\n", points);
+                putw(points, fptr);
+                fclose(fptr);
                 break;
             }
         }
