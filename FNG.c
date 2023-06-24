@@ -78,7 +78,7 @@ int main() {
         {
             printf("YOU LOST :(  your points are : %d\n", points);
             printf("and the number was : %d\n", number);
-            printf("Do you want to play again? Enter y for YES, or any other key to exit: ");
+            printf("Do you want to play again? Enter y for YES, or any other key to exit: \n");
             char play_again;
             scanf(" %c", &play_again);
             if (play_again == 'y' || play_again == 'Y')
