@@ -3,9 +3,7 @@
 #include <time.h>
 
 int number, guess, points;
-
 void logo() {
-
     printf("  _______ _             __                         \n");
     printf(" |__   __| |           / _|                        \n");
     printf("    | |  | |__   ___  | |_ _   _ _ __  _ __  _   _ \n");
@@ -36,13 +34,22 @@ int main() {
     printf("Welcome to the funny number guess game! \n");
     while(1)
     {
-        printf("Guess a number here! : ");
+        printf("Guess a number here! : \n");
+        if (number <= 5)
+        {
+            printf("hint: number is 5 or bellow! \n");
+        }
+        else
+        {
+            printf("hint: number is 5 or above 5! \n");
+        }
         scanf("%d", &guess);
         if (guess == number)
         {
             points += 1;
             printf("YOU WIN AND GET A POINT :3\n");
             printf("Your current points: %d\n", points);
+            printf("your current points are : %d\n", points);
             printf("Do you want to play again? Enter y for YES, or any other key to exit: ");
             char play_again;
             scanf(" %c", &play_again);
@@ -65,10 +72,10 @@ int main() {
             if (play_again == 'y' || play_again == 'Y')
             {
                 randnum();
-                points = 0;
             }
             else
             {
+                printf("your final  points are : %d\n", points);
                 break;
             }
         }
