@@ -7,7 +7,6 @@ int range = 10;
 
 FILE *fptr;
 
-
 void logo() {
     printf("  _______ _             __                         \n");
     printf(" |__   __| |           / _|                        \n");
@@ -32,7 +31,13 @@ void randnum() {
     number = rand() % range + 1;
 }
 
+void onclose() {
+    putw(points, fptr);
+    fclose(fptr);
+} 
+
 int main() {
+    atexit(onclose);
     fptr = fopen("score", "r");
     int points = getw(fptr);
     fclose(fptr);
